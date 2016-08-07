@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+  <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+  <style>
+.hide-bullets {
+    list-style:none;
+    margin-left: -40px;
+    margin-top:20px;
+}
+.thumbnail {
+    padding: 0;
+	background-color:black;
+	border:3px solid black;
+	
+}
+.carousel-inner>.item>img, .carousel-inner>.item>a>img {
+    width: 100%;
+	border:3px solid black;
+	}
+body{
+    overflow:hidden;
+	background-image:url(ss6.jpg);
+	}	
+#first {
+   position: relative; 
+   font-family:Times New Roman;   
+   width: 120px;
+   left:20px;
+   top:20px;
+   margin-bottom:30px;
+   background: #00cccc;
+   color: #fff;
+   font-size: 30px;
+   font-weight: bold;
+   line-height: 1.3em;
+   border-radius: 10px;
+   font-weight: normal;
+}
+#btn{
+   font-family: "Times New Roman";
+   font-size:30px;
+   position: relative;   
+   width: 120px;
+   left:20px;
+   top:20px;
+   margin-bottom:60px;
+   background: #00cccc;
+   color: #fff;
+   font-size: 30px;
+   font-weight: bold;
+   line-height: 1.3em;
+   border: 2px;
+   border-radius: 10px;
+   box-shadow: 0 0 0 4px #00cccc, 2px 1px 6px 4px rgba(10, 10, 0, 0.5);
+   text-shadow: -1px -1px #aa3030;
+   font-weight: normal;
+}
+#btn:hover {
+    background-color: red;
+}
+#link {
+    color: white;
+    background-color: transparent;
+	font-size:20px;
+	font-family:Times New Roman;
+    text-decoration: none;
+}
+#p{
+	font-size:15px;
+	color:white;
+	font-family:Times New Roman;
+}
+  </style>
+  <script>
+  jQuery(document).ready(function($) {
+ 
+        $('#myCarousel').carousel({
+                interval: 7000
+        });
+ 
+        //Handles the carousel thumbnails
+        $('[id^=carousel-selector-]').click(function () {
+        var id_selector = $(this).attr("id");
+        try {
+            var id = /-(\d+)$/.exec(id_selector)[1];
+            console.log(id_selector, id);
+            jQuery('#myCarousel').carousel(parseInt(id));
+        } catch (e) {
+            console.log('Regex failed!', e);
+        }
+    });
+        // When the carousel slides, auto update the text
+        $('#myCarousel').on('slid.bs.carousel', function (e) {
+                 var id = $('.item.active').data('slide-number');
+                $('#carousel-text').html($('#slide-content-'+id).html());
+        });
+});
+  
+  </script>
+</head>
+<body>
+
+<button id="btn" onClick="location.href='index.html'">Home</button>
+
+<div class="container">
+    <div id="main_area">
+        <!-- Slider -->
+        <div class="row">
+            <div class="col-sm-6" id="slider-thumbs">
+                <!-- Bottom switcher of slider -->
+                <ul class="hide-bullets">
+                    <li class="col-sm-3">
+                        <a class="thumbnail" id="carousel-selector-0">
+                            <img src="sun.jpg" width="100" height="100">
+                        </a>
+                    </li>
+
+                    <li class="col-sm-3">
+                        <a class="thumbnail" id="carousel-selector-1"><img src="mercury.jpg" width="100" height="100"></a>
+                    </li>
+
+                    <li class="col-sm-3">
+                        <a class="thumbnail" id="carousel-selector-2"><img src="wenus.jpg" width="100" height="100"></a>
+                    </li>
+
+                    <li class="col-sm-3">
+                        <a class="thumbnail" id="carousel-selector-3"><img src="mars.jpg" width="100" height="100"></a>
+                    </li>
+
+                    <li class="col-sm-3">
+                        <a class="thumbnail" id="carousel-selector-4"><img src="jowisz.jpg" width="100" height="100"></a>
+                    </li>
+
+                    <li class="col-sm-3">
+                        <a class="thumbnail" id="carousel-selector-5"><img src="saturn.jpg" width="100" height="100"></a>
+                    </li>
+                    <li class="col-sm-3">
+                        <a class="thumbnail" id="carousel-selector-6"><img src="uran.jpg" width="100" height="100"></a>
+                    </li>
+
+                    <li class="col-sm-3">
+                        <a class="thumbnail" id="carousel-selector-7"><img src="neptune.jpg" width="100" height="100"></a>
+                    </li>
+
+                    <li class="col-sm-3">
+                        <a class="thumbnail" id="carousel-selector-8"><img src="ziemia.jpg" width="95" height="90"></a>
+                    </li>
+
+                    <li class="col-sm-3">
+                        <a class="thumbnail" id="carousel-selector-9"><img src="ship.jpg" width="95" height="95"></a>
+                    </li>
+                    <li class="col-sm-3">
+                        <a class="thumbnail" id="carousel-selector-10"><img src="astronaut.jpg" width="100" height="100"></a>
+                    </li>
+
+                    <li class="col-sm-3">
+                        <a class="thumbnail" id="carousel-selector-11"><img src="probe.jpg" width="100" height="100"></a>
+                    </li>
+
+                    <li class="col-sm-3">
+                        <a class="thumbnail" id="carousel-selector-12"><img src="yuri.jpg" width="100" height="100"></a>
+                    </li>
+
+                    <li class="col-sm-3">
+                        <a class="thumbnail" id="carousel-selector-13"><img src="milk.jpg" width="100" height="100"></a>
+                    </li>
+                    <li class="col-sm-3">
+                        <a class="thumbnail" id="carousel-selector-14"><img src="stacja.jpg" width="100" height="100"></a>
+                    </li>
+
+                    <li class="col-sm-3">
+                        <a class="thumbnail" id="carousel-selector-15"><img src="moon.jpg" width="100" height="100"></a>
+                    </li>
+                </ul>
+            </div>
+            <div class="col-sm-6">
+                <div class="col-xs-12" id="slider">
+                    <!-- Top part of the slider -->
+                    <div class="row">
+                        <div class="col-sm-12" id="carousel-bounding-box">
+                            <div class="carousel slide" id="myCarousel">
+                                <!-- Carousel items -->
+                                <div class="carousel-inner">
+                                    <div class="active item" data-slide-number="0">
+                                       <a href="https://alexeinstein.wordpress.com/author/alexeinstein/page/4/"target="_blank"><img src="sun.jpg"></a></div>
+
+                                    <div class="item" data-slide-number="1">
+                                        <a href="https://upload.wikimedia.org/wikipedia/commons/5/5b/EN0108821596M_Sholem_Aleichem_crater_on_Mercury.png"target="_blank"><img src="mercury.jpg" ></a></div>
+
+                                    <div class="item" data-slide-number="2">
+                                       <a href="http://www.ucg.org/beyond-today/blogs/venus-what-science-the-bible-tell-us-about-this-fascinating-planet"target="_blank"><img src="wenus.jpg"></a></div>
+
+                                    <div class="item" data-slide-number="3">
+                                        <a href="http://qz.com/512974/if-there-is-liquid-water-on-mars-no-one-not-even-nasa-can-get-anywhere-near-it/"target="_blank"><img src="mars.jpg"></a></div>
+
+                                    <div class="item" data-slide-number="4">
+                                        <a href="https://sites.google.com/site/astrodonek/home/palnety"target="_blank"> <img src="jowisz.jpg"></a></div>
+
+                                    <div class="item" data-slide-number="5">
+                                        <a href="http://www.defenceweb.co.za/index.php?option=com_content&view=article&id=17535:european-space-agency-discovers-enceladus-moon-rains-water-onto-saturn&catid=90:science-a-defence-technology&Itemid=204/"target="_blank"> <img src="saturn.jpg"></a></div>
+                                    
+                                    <div class="item" data-slide-number="6">
+                                        <a href="https://pl.wikipedia.org/wiki/Ariel_(ksi%C4%99%C5%BCyc)"target="_blank"><img src="uran.jpg"></a></div>
+                                    
+                                    <div class="item" data-slide-number="7">
+                                       <a href="https://www.dr.dk/nyheder/viden/foerste-naerbillede-af-neptun-har-25-aars-jubilaeum"target="_blank"><img src="neptune.jpg"></a></div>
+                                    
+                                    <div class="item" data-slide-number="8">
+                                        <a href="https://www.google.com/url?sa=i&rct=j&q=&esrc=s&source=images&cd=&ved=0ahUKEwiXmN-m75_MAhVhDMAKHVqdDYAQjxwIAw&url=http%3A%2F%2Fwww.welt.de%2Fwissenschaft%2Fweltraum%2Farticle13835164%2FNasa-Satellit-macht-spektakulaeres-Foto-von-der-Erde.html&psig=AFQjCNECrQKLBSkVqvsV4eICPY79hEX0Dg&ust=1461332868550509"target="_blank"><img src="ziemia.jpg"></a></div>
+                                    
+                                    <div class="item" data-slide-number="9">
+                                        <a href="http://es.paperblog.com/transbordadores-espaciales-el-final-de-una-era-604209/"target="_blank"><img src="ship.jpg"></a></div>
+                                    
+                                    <div class="item" data-slide-number="10">
+										<a href="http://www.nasamoonhoax.com/the-apollo-moon-hoax-valid-reasons-to-doubt-nasas-historic-manned-lunar-landings/"target="_blank"><img src="astronaut.jpg"></a></div>
+                                    
+                                    <div class="item" data-slide-number="11">
+                                        <a href="http://www.papercraftsquare.com/tag/nasa"target="_blank"> <img src="probe.jpg"></a></div>
+                                    
+                                    <div class="item" data-slide-number="12">
+                                        <a href="http://marionunprensesi.com/yuri-gagarin.html"target="_blank"> <img src="yuri.jpg"></a></div>
+
+                                    <div class="item" data-slide-number="13">
+                                       <a href="http://www.ekologia.pl/ciekawostki/to-najstarsze-gwiazdy-znalezione-w-drodze-mlecznej,21027.html"target="_blank"><img src="milk.jpg"></a></div>
+
+                                    <div class="item" data-slide-number="14">
+                                        <a href="https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcS6Dh-Dqbc7rt4T5LQOSIWw1ESasCAXxnZ5aOa5Pe69TwhhZ8k8CHB0wxtc"target="_blank"><img src="stacja.jpg"></a></div>
+
+                                    <div class="item" data-slide-number="15">
+									<a id="link" href="https://upload.wikimedia.org/wikipedia/commons/e/e1/FullMoon2010.jpg"target="_blank"><img src="moon.jpg"></div>
+                                </div>
+                                <!-- Carousel nav -->
+                                <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
+                                    <span class="glyphicon glyphicon-chevron-left"></span>
+                                </a>
+                                <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
+                                    <span class="glyphicon glyphicon-chevron-right"></span>
+                                </a>
+								<p id="p">click on a picture to see source</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!--/Slider-->
+        </div>
+
+    </div>
+</div>
+</body>
+</html>
