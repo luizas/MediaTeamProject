@@ -1,4 +1,4 @@
-# MediaTeamProject (three people in team)
+# MediaTeamProject (three people in a team)
 
 Project is aimed at children between the ages of 9-12.
 This site is designed to stimulate an interest in all areas space and 
